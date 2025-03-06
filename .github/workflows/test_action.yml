@@ -6,10 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Returns the number square
     steps:
+      - name: Set Start Time
+        run: echo "START_TIME=$(date +%s%3N)" >> $GITHUB_ENV
       - name: Fetch num squared
         id: get_square
         uses: karthickme/action01@main
         with:
           num: 11
+          to_id: "tokarthick.elangovan@gmail.com"
+          cc_id: "ccsmekarthick2005@gmail.com"
+          start_time: process.env.START_TIME
+          content: "Content to be populated"
+          failure: true
       - name: Print the square
         run: echo "${{ steps.get_square.outputs.num_squared }}"
