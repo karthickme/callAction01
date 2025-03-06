@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Fetch num squared
         id: get_square
-        uses: karthickme/action01@0.0.4
+        uses: karthickme/action01@0.0.5
         with:
           num: 11
       - name: Print the square
